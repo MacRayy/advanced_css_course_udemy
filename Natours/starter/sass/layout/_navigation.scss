@@ -12,6 +12,7 @@
     top: 6rem;
     right: 6rem;
     z-index: 25;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
   }
 
   &__background {
@@ -23,8 +24,7 @@
     right: 6.5rem;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 15;
-
-    transform: scale(80);
+    transition: transform .6s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &__nav {
@@ -32,8 +32,11 @@
     width: 100%;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 20;
+    opacity: 0;
+    transition: all .6s cubic-bezier(0.86, -0.55, 0.265, 1.55);
+    transform: translateX(-100%);
   }
 
   &__list {
@@ -41,6 +44,7 @@
 
     list-style: none;
     text-align: center;
+    width: 100%;
   }
 
   &__item {
@@ -68,5 +72,14 @@
       color: $color-primary;
       transform: translateX(1rem);
     }
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
