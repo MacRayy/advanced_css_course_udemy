@@ -12,3 +12,53 @@
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
+// MEDIA QUERY MANAGER
+// 0 - 600px: phone
+// 600px - 900px: tablet portrait
+// 900px - 1200px: tablet landscape
+
+// 1200px - 1800px: desktop (default style)
+
+// 1800 +: big desktop
+
+// THIS IS ALSO A WORKING METHOD
+// @mixin respond-phone {
+//  @media (max-width: 600px) {
+//    @content
+//  }
+// }
+
+// BREAKPONT ARGUMENT CHOICES:
+// phone
+// tab-port
+// tab-land
+// big-desk
+
+// 1em === 16px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {   //600px
+      @content
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {   //900px
+      @content
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {   //1200px
+      @content
+    }
+  }
+
+  @if $breakpoint == big-desk {
+    @media (min-width: 112.5em) {   //1800px
+      @content
+    }
+  }
+}
