@@ -153,14 +153,15 @@
   // TABLET PORTRAIT
   @include respond(tab-port) {
     // FUNCTIONALITY
-    height: auto;
     border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    height: auto;
 
     &__side {
+      box-shadow: none;
       height: auto;
       overflow: hidden;
       position: relative;
-
 
       &--back {
         // clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);

@@ -22,7 +22,7 @@ body {
     letter-spacing: 3.5rem;
 
     @include respond(phone) {
-      font-size: 5rem;
+      font-size: 8vw;
       letter-spacing: 1rem;
     }
   }
