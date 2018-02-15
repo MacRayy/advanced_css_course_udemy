@@ -371,18 +371,22 @@
   }
 
   &__item::before {
-    // background-image: url('../img/chevron-thin-right.svg');
-    // background-size: cover;
+    background-image: url('../img/chevron-thin-right.svg');
+    background-size: cover;
     content: '';
     display: inline-block;
     height: 1rem;
-    width: 1rem;
     margin-right: .7rem;
-    background-color: var(--color-primary);
-    -webkit-mask-image: url('../img/chevron-thin-right.svg');
-    -webkit-mask-size: cover;
-    mask-image: url('../img/chevron-thin-right.svg');
-    mask-size: cover;
+    width: 1rem;
+
+    @supports (-webkit-mask-image: url('')) or (mask-image: url('')) {
+      -webkit-mask-image: url('../img/chevron-thin-right.svg');
+      -webkit-mask-size: cover;
+      background-color: var(--color-primary);
+      background-image: none;
+      mask-image: url('../img/chevron-thin-right.svg');
+      mask-size: cover;
+    }
   }
 }
 
