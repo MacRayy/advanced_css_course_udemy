@@ -258,8 +258,17 @@
   padding-bottom: 2px;
   transition: all .2s;
 
+  & span {
+    margin-left: 3px;
+    transition: margin-left .2s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -291,20 +300,25 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
   display: flex;
+  font-size: 1.4rem;
   padding: 4.5rem;
 }
 
 .description {
   background-color: #fff;
   box-shadow: var(--shadow-light);
+  display: flex;
   flex: 0 0 60%;
-  font-size: 1.4rem;
+  flex-direction: column;
   margin-right: 4.5rem;
   padding: 3rem;
 }
 
 .user-reviews {
+  align-items: center;
+  display: flex;
   flex: 1;
+  flex-direction: column;
 }
 
 // PARAGRAPH
@@ -349,6 +363,7 @@
   color: var(--color-grey-dark-3);
   display: flex;
   font-size: 1.3rem;
+  margin-top: auto;
 
   &__count {
     margin-right: auto;
@@ -368,5 +383,71 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+// REVIEW
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+  padding: 3rem;
+  position: relative;
+
+  &__text {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__user {
+    align-items: center;
+    display: flex;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    height: 4.5rem;
+    margin-right: 1.5rem;
+    width: 4.5rem;
+  }
+
+  &__user-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__user-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+    text-transform: uppercase;
+  }
+
+  &__user-date {
+    font-size: 1.1rem;
+  }
+
+  &__rating {
+    align-items: center;
+    color: var(--color-primary);
+    display: flex;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-left: auto;
+  }
+
+  &::before {
+    color: var(--color-grey-light-2);
+    content: '\201C';
+    font-family: sans-serif;
+    font-size: 20rem;
+    left: -1rem;
+    line-height: 1;
+    position: absolute;
+    top: -2.75rem;
+    z-index: 1;
   }
 }
