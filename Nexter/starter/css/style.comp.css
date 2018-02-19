@@ -205,18 +205,27 @@ body {
     text-transform: uppercase; }
 
 .features {
-  align-items: start;
-  display: grid;
   grid-column: center-start / center-end;
-  grid-gap: 6rem;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   margin: 15rem 0; }
+  @supports (display: grid) {
+    .features {
+      align-items: start;
+      display: grid;
+      grid-gap: 6rem;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); } }
 
 .feature {
-  display: grid;
+  float: left;
+  margin-bottom: 6rem;
+  width: 33.3333%;
+  sdisplay: grid;
   grid-column-gap: 2.5rem;
   grid-row-gap: 1.5rem;
   grid-template-columns: min-content 1fr; }
+  @supports (display: grid) {
+    .feature {
+      margin-bottom: 0;
+      width: auto; } }
   .feature__icon {
     fill: #c69963;
     grid-row: 1 / span 2;
